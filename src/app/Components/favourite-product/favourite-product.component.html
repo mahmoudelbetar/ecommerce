@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-3 my-3" *ngFor="let product of favCart">
+    <div class="card" style="width: 18rem;">
+      <img [src]="product.image" class="card-img-top" height="100px" [alt]="product.title">
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text" style="height: 100px; overflow:hidden">{{product.description}}...</p>
+        <p class="h4">{{product.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>
