@@ -1,13 +1,30 @@
-<div class="row">
-  <div class="col-3 offset-4">
-    <div class="mb-3">
-      <select class="form-control" (change)="getProductsWithCategory()" [(ngModel)]="category">
-        <option>men's clothing</option>
-        <option>jewelery</option>
-      </select>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">eCommerce</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown d-flex flex-column justify-content-center">
+          <select class="nav-link dropdown-toggle p-0" id="dropdownId" data-bs-toggle="dropdown" (change)="getProductsWithCategory()" [(ngModel)]="category">
+            Select Category
+            <option selected>All</option>
+            <option>men's clothing</option>
+            <option>jewelery</option>
+          </select>
+        </li>
+      </ul>
+      <form class="d-flex my-2 my-lg-0 w-50">
+        <input class="form-control me-sm-2" type="text" placeholder="Search" #search (input)="getProduct(search.value)">
+      </form>
     </div>
   </div>
-</div>
+</nav>
 <div class="row mt-3">
   <div class="col-3 my-3" *ngFor="let product of products">
     <div class="card" style="width: 18rem;">

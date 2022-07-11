@@ -99,7 +99,15 @@ export class ProductService {
   }
 
   getProductsWithCategory(category: string){
+    if(category === "All"){
+      return this.products;
+    }
     return this.products.filter(product => product.category == category);
+  }
+
+  getProduct(name: string){
+    let regex = new RegExp(name, 'ig');
+    return this.products.filter((product) => product.title.match(regex));
   }
 
 

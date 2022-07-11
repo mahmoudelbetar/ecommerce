@@ -32,5 +32,8 @@ export class ProductCardComponent implements OnInit {
     this.products = this.productService.getProductsWithCategory(this.category);
   }
 
+  getProduct(name: string){
+    this.products =  this.productService.getProduct(name);
+  }
 
 }
